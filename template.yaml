@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Metadata:
+    Version: 0.0.12
+
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod
+    Description: Deployment environment
+
+Conditions:
+  ProdEnvironment: !Equals [ !Ref Environment, prod ]
+
+Globals:
+  Function:
+    Runtime: nodejs10.x
+    Tracing: Active
+    Environment:
+      Variables:
+        ENVIRONMENT: !If [ProdEnvironment, "PRODUCTION", "DEVELOPMENT"]
+
+
+Resources:
+
+  ApiPrepaga:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/js/index.handler
+      Timeout: 900
+      MemorySize: 3008
+      Events:
+        MySQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt apiRequestEvents.Arn
+            BatchSize: 10
+      Environment:
+        Variables:
+          POWERTOOLS_SERVICE_NAME: api-prepaga-lambda
+      Policies:
+        - CloudWatchLambdaInsightsExecutionRolePolicy
+        - AmazonSQSFullAccess
+
+  apiRequestEvents:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: ApiRequestEvents.fifo
+      VisibilityTimeout: 900
+      FifoQueue: true
+      ContentBasedDeduplication: true
