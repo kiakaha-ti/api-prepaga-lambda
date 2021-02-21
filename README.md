@@ -4,9 +4,9 @@ Project lambda
 
 # Commands
 
-sam build --> Start build 
-sam deploy --> Push the new lambda in AWS using cloudformation
-sam local invoke "ApiPrepaga" -e ./events/inmmediate.json --env-vars .env.json --> Invoke lambda locally for test
+sam build --> Start build <br>
+sam deploy --> Push the new lambda in AWS using cloudformation <br>
+sam local invoke "ApiPrepaga" -e ./events/inmmediate.json --env-vars .env.json --> Invoke lambda locally for test 
 
 # Credentials
 
