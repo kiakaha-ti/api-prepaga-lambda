@@ -1,8 +1,8 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 
 Metadata:
-    Version: 0.0.12
+  Version: 0.0.12
 
 Parameters:
   Environment:
@@ -14,19 +14,17 @@ Parameters:
     Description: Deployment environment
 
 Conditions:
-  ProdEnvironment: !Equals [ !Ref Environment, prod ]
+  ProdEnvironment: !Equals [!Ref Environment, prod]
 
 Globals:
   Function:
-    Runtime: nodejs10.x
+    Runtime: nodejs14.x
     Tracing: Active
     Environment:
       Variables:
         ENVIRONMENT: !If [ProdEnvironment, "PRODUCTION", "DEVELOPMENT"]
 
-
 Resources:
-
   ApiPrepaga:
     Type: AWS::Serverless::Function
     Properties:
