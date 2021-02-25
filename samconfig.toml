@@ -1,9 +1,0 @@
-version = 0.1
-[default]
-[default.deploy]
-[default.deploy.parameters]
-stack_name = "api-prepaga-lambda"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-gwr775et0bti"
-s3_prefix = "api-prepaga-lambda"
-region = "sa-east-1"
-capabilities = "CAPABILITY_IAM"
