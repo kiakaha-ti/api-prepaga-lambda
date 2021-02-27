@@ -29,8 +29,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: src/js/index.handler
-      Timeout: 900
-      MemorySize: 3008
+      Timeout: 30
+      MemorySize: 256
       Events:
         MySQSEvent:
           Type: SQS
