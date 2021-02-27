@@ -8,7 +8,7 @@ exports.handler =  async function(event, context) {
             const bodyJson = JSON.parse(event.Records[i].body)
             const strategyManagerInstance = setStrategies()
             const strategyInstance = strategyManagerInstance.getStrategy(bodyJson.uri)
-            strategyInstance.doAction(bodyJson.body)
+            strategyInstance.doAction(bodyJson.body, bodyJson.method)
         }
     }
     return 'Hello World!';

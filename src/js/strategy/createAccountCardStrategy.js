@@ -3,8 +3,8 @@ class CreateAccountCardStrategy{
         this._uri = uri
     }
 
-    doAction(payload){
-        console.log(payload)
+    doAction(body, method){
+        console.log('method : ' + method + ' - body : ' + JSON.stringify(body))
     }
 }
 
