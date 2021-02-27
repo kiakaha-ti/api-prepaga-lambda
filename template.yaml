@@ -43,8 +43,7 @@ Resources:
       Policies:
         - CloudWatchLambdaInsightsExecutionRolePolicy
         - SQSPollerPolicy:
-            QueueName:
-              !GetAtt apiRequestEvents.QueueName
+            QueueName: !GetAtt apiRequestEvents.QueueName
   apiRequestEvents:
     Type: AWS::SQS::Queue
     Properties:
