@@ -60,6 +60,6 @@ Resources:
     Type: AWS::SQS::Queue
     Properties:
       QueueName: ApiRequestEvents.fifo
-      VisibilityTimeout: 900
+      VisibilityTimeout: 30
       FifoQueue: true
       ContentBasedDeduplication: true
