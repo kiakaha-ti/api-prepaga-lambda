@@ -1,5 +1,6 @@
 const StrategyManager = require('./strategy/strategyManager.js');
 const CreateAccountCardStrategy = require('./strategy/createAccountCardStrategy');
+const DefaultStrategy = require('./strategy/defaultStrategy');
 
 exports.handler =  async function(event, context) {
     const strategyManagerInstance = setStrategies()
@@ -17,6 +18,8 @@ exports.handler =  async function(event, context) {
 function setStrategies(){
     const strategyManager = new StrategyManager()
     const createAccountCardStrategy = new CreateAccountCardStrategy('createAccountCardStrategy')
+    const defaultStrategy = new DefaultStrategy('default')
     strategyManager.addStrategy(createAccountCardStrategy)
+    strategyManager.addStrategy(defaultStrategy)
     return strategyManager
 }
