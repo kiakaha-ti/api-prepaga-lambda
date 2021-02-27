@@ -44,6 +44,18 @@ Resources:
         - CloudWatchLambdaInsightsExecutionRolePolicy
         - SQSPollerPolicy:
             QueueName: !GetAtt apiRequestEvents.QueueName
+  apiPrepagaRequestSenderUser:
+    Type: AWS::IAM::User
+    Properties:
+      Path: "/"
+      Policies:
+      - PolicyName: AllowSendToSQS
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: sqs:SendMessage
+            Resource: !GetAtt apiRequestEvents.Arn
   apiRequestEvents:
     Type: AWS::SQS::Queue
     Properties:
