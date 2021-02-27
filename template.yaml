@@ -42,8 +42,9 @@ Resources:
           POWERTOOLS_SERVICE_NAME: api-prepaga-lambda
       Policies:
         - CloudWatchLambdaInsightsExecutionRolePolicy
-        - AmazonSQSFullAccess
-
+        - SQSPollerPolicy:
+            QueueName:
+              !GetAtt apiRequestEvents.QueueName
   apiRequestEvents:
     Type: AWS::SQS::Queue
     Properties:
