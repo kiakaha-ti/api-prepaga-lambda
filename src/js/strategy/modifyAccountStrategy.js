@@ -1,6 +1,6 @@
 const invokeService = require('../invokeRestUtils/invokeRest');
 
-class CreateAccountCardStrategy{
+class ModifyAccountStrategy{
     constructor(uri, method, uriNew) {
         this._uri = uri
         this._method = method
@@ -44,4 +44,4 @@ class CreateAccountCardStrategy{
     }
 }
 
-module.exports = CreateAccountCardStrategy;
+module.exports = ModifyAccountStrategy;

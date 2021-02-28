@@ -1,6 +1,6 @@
 const invokeService = require('../invokeRestUtils/invokeRest');
 
-class CreateAccountCardStrategy{
+class GetAccountStrategy{
     constructor(uri, method, uriNew) {
         this._uri = uri
         this._method = method
@@ -25,23 +25,6 @@ class CreateAccountCardStrategy{
         })
     }
 
-    createRequest(body){
-        return {
-            Nombre: body.Nombre ,
-            Apellido: body.Apellido,
-            Email: body.Email,
-            Sexo: body.Sexo,
-            FechaNacimiento: body.FechaNacimiento,
-            Embozado: body.Embozado,
-            Documento: body.Documento,
-            Telefonos: body.Telefono,
-            DomicilioParticular: body.DomicilioParticular,
-            DomicilioCorrespondencia: body.DomicilioCorrespondencia,
-            IdCuentaExterna: body.IdCuentaExterna,
-            SucursalEmisora: body.SucursalEmisora,
-            GrupoAfinidad: body.GrupoAfinidad
-        }
-    }
 }
 
-module.exports = CreateAccountCardStrategy;
+module.exports = GetAccountStrategy;

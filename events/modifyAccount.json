@@ -3,7 +3,7 @@
     {
       "messageId": "acaab929-bb4a-443c-a193-f6cddb1232d7",
       "receiptHandle": "AQEBCs44ixei5c022WFDg3crQwN9zb9EJyiOcOlIZ6EYSyBh0WTf6iyIvpCOGlQyt3Cfce85VcsqeUuqwuhhlRLN7KZvf9wNewxVs5lkwxk3uNmDFL56OgaSrhULD3fKzHglmVqOS/j+HWBSQ6WBEWNI3rUsiGT1GOBHzFPN0RjR0vMuLeoq2pH1nI+FkuEb0S7auurK57YGQjy2QZLNtQJUpF/G0o9GfvYgCSKyODdyZ4ru8kFpKXv7GZqTmacg/dXBorGuw3U7NWT4vdJSAiiAyGqxmJw2Jn9JgBen6VyDotM=",
-      "body": "{\"uri\":\"createAccountCardStrategy\",\"body\":{\"key1\":\"value1\",\"key2\":\"value2\"},\"headers\":{\"host\":\"localhost:3000\",\"user-agent\":\"curl/7.68.0\",\"accept\":\"application/json\",\"content-type\":\"application/json\",\"content-length\":\"33\"},\"method\":\"POST\"}",
+      "body": "{\"uri\":\"modifyAccount\",\"body\":{\"DomicilioParticular\": {\"Calle\": \"Ugarteche\",\"Altura\": \"1146\",\"Piso\": \"4\",\"Departamento\": \"A\",\"CodigoPostal\": \"1425\",\"Localidad\": \"Palermo\",\"Provincia\": 1,\"Pais\": 32,\"Comentario\": \"Prueba\"}},\"headers\":{\"host\":\"localhost:3000\",\"user-agent\":\"curl/7.68.0\",\"accept\":\"application/json\",\"content-type\":\"application/json\",\"content-length\":\"33\",\"authorization\":\"Bearer asdadasdasdasd\"},\"method\":\"POST\"}",
       "attributes": {
         "ApproximateReceiveCount": "1",
         "SentTimestamp": "1614452703286",
