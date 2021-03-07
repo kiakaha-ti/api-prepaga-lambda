@@ -3,7 +3,9 @@ version = 0.1
 [default.deploy]
 [default.deploy.parameters]
 stack_name = "api-prepaga-lambda"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-gwr775et0bti"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-k1h5d6py5mq4"
 s3_prefix = "api-prepaga-lambda"
-region = "sa-east-1"
+region = "us-east-2"
 capabilities = "CAPABILITY_IAM"
+confirm_changeset = true
+parameter_overrides = "Environment=\"dev\""
