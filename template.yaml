@@ -44,6 +44,15 @@ Resources:
         - CloudWatchLambdaInsightsExecutionRolePolicy
         - SQSPollerPolicy:
             QueueName: !GetAtt apiRequestEvents.QueueName
+      VpcConfig:
+        # We can improve this by creating a more restricted sg
+        SecurityGroupIds:
+          - sg-75ac141e
+        # We can improve this by leaving only the required subnet
+        SubnetIds:
+          - subnet-9bae8cd6
+          - subnet-fa9f2d92
+          - subnet-78837602
   apiPrepagaRequestSenderUser:
     Type: AWS::IAM::User
     Properties:
