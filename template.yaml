@@ -42,17 +42,32 @@ Resources:
           POWERTOOLS_SERVICE_NAME: api-prepaga-lambda
       Policies:
         - CloudWatchLambdaInsightsExecutionRolePolicy
+        - AmazonS3FullAccess
         - SQSPollerPolicy:
             QueueName: !GetAtt apiRequestEvents.QueueName
       VpcConfig:
         # We can improve this by creating a more restricted sg
         SecurityGroupIds:
-          - sg-75ac141e
+          - sg-f182ccb9
+          - sg-e7ef26ae
+          - sg-c7770eb1
+          - sg-973005e0
+          - sg-92cbe5e5
         # We can improve this by leaving only the required subnet
         SubnetIds:
-          - subnet-9bae8cd6
-          - subnet-fa9f2d92
-          - subnet-78837602
+          - subnet-15e5ad48
+          - subnet-0e1ea212169ac7f1e
+          - subnet-0fd59d52
+          - subnet-bde8a0e0
+          - subnet-01d4c84a
+          - subnet-03e0a85e
+          - subnet-18d6ca53
+          - subnet-a7dcc0ec
+          - subnet-19d3cf52
+          - subnet-99213dd2
+          - subnet-34d2ce7f
+          - subnet-bbe4ace6
+          - subnet-aaeba3f7
   apiPrepagaRequestSenderUser:
     Type: AWS::IAM::User
     Properties:
