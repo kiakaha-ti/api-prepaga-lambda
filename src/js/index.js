@@ -3,17 +3,22 @@ const CreateAccountCardStrategy = require('./strategy/createAccountCardStrategy'
 const ModifyAccountStrategy = require('./strategy/modifyAccountStrategy');
 const GetAccountStrategy = require('./strategy/getAccountStrategy');
 const DefaultStrategy = require('./strategy/defaultStrategy');
+const Keycloak = require("./keycloak");
+const ApiPrepaga = require("./invokeRestUtils/apiPrepaga");
 
-exports.handler =  async function(event, context) {
-    const strategyManagerInstance = setStrategies()
-    for (let i = 0; i < event.Records.length; i++)
-    {
-        if (event.Records[i].body) {
-            const bodyJson = JSON.parse(event.Records[i].body)
-            const strategyInstance = strategyManagerInstance.getStrategy(bodyJson.uri)
-            strategyInstance.doAction(bodyJson.body, bodyJson.method, bodyJson.headers)
-        }
+let token = undefined
+
+exports.handler = async function(event, context) {
+    if (!token){
+        console.log('Genero token')
+        const keycloak = new Keycloak('prepagas','GlobalProc','APREPAID', '45ae46c0-1792-4830-a564-7f09f17edc6a', 'password','http://sso.global.globalprocessing.net.ar')
+        token = await keycloak.getToken()
+        token = JSON.parse(token).access_token
+        console.log('Token generado ' + token)
     }
+    const apiPrepaga = new ApiPrepaga()
+    const resultApiPrepaga = await apiPrepaga.get(`/GP.Prepagas/Api/Productos/62/Cuentas/1669999`, token)
+    console.log(resultApiPrepaga)
 }
 
 function setStrategies(){
