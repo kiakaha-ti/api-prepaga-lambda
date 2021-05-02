@@ -1,0 +1,31 @@
+{
+  "Records": [
+    {
+      "messageId": "acaab929-bb4a-443c-a193-f6cddb1232d7",
+      "receiptHandle": "AQEBCs44ixei5c022WFDg3crQwN9zb9EJyiOcOlIZ6EYSyBh0WTf6iyIvpCOGlQyt3Cfce85VcsqeUuqwuhhlRLN7KZvf9wNewxVs5lkwxk3uNmDFL56OgaSrhULD3fKzHglmVqOS/j+HWBSQ6WBEWNI3rUsiGT1GOBHzFPN0RjR0vMuLeoq2pH1nI+FkuEb0S7auurK57YGQjy2QZLNtQJUpF/G0o9GfvYgCSKyODdyZ4ru8kFpKXv7GZqTmacg/dXBorGuw3U7NWT4vdJSAiiAyGqxmJw2Jn9JgBen6VyDotM=",
+      "body": "{\"uri\":\"https://pepepe/GP.Prepagas/Api/Productos/1/Cuentas/9/AltaSocioAdicional\",\"body\":{\"PagaOtorEntiSucurCodi\":1,\"TipoProducCodi\":94,\"CarteCodi\":92,\"PersoDocuNume\":{\"Tipo\":\"1\",\"Numero\":\"23456789\"},\"GrupoCodi\":6,\"TrackingId\":\"\",\"Telefonos\":{\"Particular\":\"55544433\",\"Celular\":\"44443333\",\"Correspondencia\":\"33332222\",\"Laboral\":\"22221111\",\"Otro\":\"11110000\"},\"PersoApe\":\"Perez\",\"PersoNombre\":\"Maria\",\"PersoEMail\":\"maria@gmail.com\",\"NomEmbozado\":\"MariaPerez\",\"PersoNacimFecha\":\"1980-12-18\",\"PersoSexo\":\"M\",\"PaisCodiNacionalidad\":32,\"PersoDocuNumeOtro\":{\"Tipo\":\"8\",\"Numero\":\"20234567892\"},\"CivilEstaCodi\":\"1\",\"ProfeCodi\":0,\"EstaCliCodi\":\"A\",\"AutoReno\":1,\"ImprimeCuartaLinea\":0,\"EmboCuartaLinea\":\"\",\"TarjeLimiPorcen\":0,\"CuentaExtNume\":\"\",\"DireccionParticular\":{\"Calle\":\"calle1\",\"Altura\":\"1100\",\"Piso\":\"0\",\"Departamento\":\"0\",\"CodigoPostal\":\"1200\",\"Localidad\":\"caba\",\"Provincia\":1,\"Pais\":32,\"Comentario\":\"\"},\"DireccionCorrespondencia\":{\"Calle\":\"calle2\",\"Altura\":\"2000\",\"Piso\":\"0\",\"Departamento\":\"1\",\"CodigoPostal\":\"1200\",\"Localidad\":\"caba\",\"Provincia\":1,\"Pais\":32,\"Comentario\":\"sd\"}},\"headers\":{\"host\":\"localhost:3000\",\"user-agent\":\"curl/7.68.0\",\"accept\":\"application/json\",\"content-type\":\"application/json\",\"content-length\":\"33\"},\"method\":\"POST\", \"origin\": \"gw\"}",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1614452703286",
+        "SequenceNumber": "18860043965750767616",
+        "MessageGroupId": "Group1",
+        "SenderId": "AIDAWVCWNYGAWR3DF5RI3",
+        "MessageDeduplicationId": "Id",
+        "ApproximateFirstReceiveTimestamp": "1614452703286"
+      },
+      "messageAttributes": {
+        "Id": {
+          "stringValue": "d127e9ab-a762-467d-8b09-53fd23babd41",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        }
+      },
+      "md5OfBody": "b83ba077d275774f04d6a27fff0da728",
+      "md5OfMessageAttributes": "ad507769ef62e24754fe199ac5aec261",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:sa-east-1:457595273601:ApiRequestEvents.fifo",
+      "awsRegion": "sa-east-1"
+    }
+  ]
+}
